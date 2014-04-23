@@ -10,4 +10,6 @@ Pod::Spec.new do |s|
   s.description = 'Add iMessage\'s text input behavior (UIScrollViewKeyboardDismissModeInteractive + persistent inputAccessoryView) to any UIScrollView.'
   s.source_files = 'RDRStickyKeyboardView/*.{h,m}'
   s.requires_arc = true
+  s.dependency  'SAMTextView', '~> 0.2'
+
 end

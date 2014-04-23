@@ -28,13 +28,15 @@
 
 #import <UIKit/UIKit.h>
 
+#import "SAMTextView.h"
+
 #pragma mark - RDRKeyboardInputView
 
 @interface RDRKeyboardInputView : UIView
 
 @property (nonatomic, strong, readonly) UIButton *leftButton;
 @property (nonatomic, strong, readonly) UIButton *rightButton;
-@property (nonatomic, strong, readonly) UITextView *textView;
+@property (nonatomic, strong, readonly) SAMTextView *textView;
 
 @end
 

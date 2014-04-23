@@ -207,7 +207,7 @@ static inline UIViewAnimationOptions RDRAnimationOptionsForCurve(UIViewAnimation
 #define RDR_KEYBOARD_INPUT_VIEW_MARGIN_BUTTONS_VERTICAL             7
 
 @interface RDRKeyboardInputView () {
-    UITextView *_textView;
+    SAMTextView *_textView;
     UIButton *_leftButton;
     UIButton *_rightButton;
 }
@@ -239,7 +239,7 @@ static inline UIViewAnimationOptions RDRAnimationOptionsForCurve(UIViewAnimation
         return _textView;
     }
     
-    _textView = [UITextView new];
+    _textView = [SAMTextView new];
     self.textView.font = [UIFont systemFontOfSize:15.0f];
     self.textView.layer.cornerRadius = 5.0f;
     self.textView.layer.borderWidth = 1.0f;
