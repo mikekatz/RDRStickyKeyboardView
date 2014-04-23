@@ -58,9 +58,11 @@
 
 @property (nonatomic, strong, readonly) UIScrollView *scrollView;
 @property (nonatomic, strong, readonly) RDRKeyboardInputView *inputView;
+@property (nonatomic, copy) NSString* placeholder;
 
 // Designated initializer
 - (instancetype)initWithScrollView:(UIScrollView *)scrollView;
 - (void)reloadInputAccessoryView;
+- (void) clearText;
 
 @end

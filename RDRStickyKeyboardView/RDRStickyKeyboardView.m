@@ -445,6 +445,7 @@ static NSInteger const RDRInterfaceOrientationUnknown   = -1;
 @end
 
 @implementation RDRStickyKeyboardView
+@dynamic placeholder;
 
 #pragma mark - Lifecycle
 
@@ -490,6 +491,19 @@ static NSInteger const RDRInterfaceOrientationUnknown   = -1;
 {
     [self _updateInputViewFrameWithKeyboardFrame:CGRectZero
                                      forceReload:YES];
+}
+
+- (void)setPlaceholder:(NSString *)placeholder
+{
+    NSString* _placeHolder = [placeholder copy];
+    self.dummyInputView.textView.placeholder = _placeHolder;
+    self.inputView.textView.placeholder = _placeHolder;
+}
+
+- (void)clearText
+{
+    self.inputView.textView.text = @"";
+    self.dummyInputView.textView.text = @"";
 }
 
 #pragma mark - Private
