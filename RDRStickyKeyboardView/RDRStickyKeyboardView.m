@@ -289,7 +289,7 @@ static inline UIViewAnimationOptions RDRAnimationOptionsForCurve(UIViewAnimation
     _toolbar.translucent = YES;
     [self addSubview:self.toolbar];
     
-    [self addSubview:self.leftButton];
+    //    [self addSubview:self.leftButton];
     [self addSubview:self.rightButton];
     [self addSubview:self.textView];
     
@@ -328,7 +328,8 @@ static inline UIViewAnimationOptions RDRAnimationOptionsForCurve(UIViewAnimation
     // Define constraints
     NSArray *constraints = nil;
     NSString *visualFormat = nil;
-    NSDictionary *views = @{ @"leftButton" : self.leftButton,
+    NSDictionary *views = @{
+                            //                            @"leftButton" : self.leftButton,
                              @"rightButton" : self.rightButton,
                              @"textView" : self.textView,
                              @"toolbar" : self.toolbar};
@@ -349,19 +350,19 @@ static inline UIViewAnimationOptions RDRAnimationOptionsForCurve(UIViewAnimation
                                                             views:views];
     [self addConstraints:constraints];
     
-    visualFormat = @"H:|-(==hor)-[leftButton]-(==hor)-[textView]-(==hor)-[rightButton]-(==hor)-|";
+    visualFormat = @"H:|-(==hor)-[textView]-(==hor)-[rightButton]-(==hor)-|";
     constraints = [NSLayoutConstraint constraintsWithVisualFormat:visualFormat
                                                           options:0
                                                           metrics:metrics
                                                             views:views];
     [self addConstraints:constraints];
     
-    visualFormat = @"V:|-(>=leftButtonMargin)-[leftButton]-(==leftButtonMargin)-|";
-    constraints = [NSLayoutConstraint constraintsWithVisualFormat:visualFormat
-                                                          options:0
-                                                          metrics:metrics
-                                                            views:views];
-    [self addConstraints:constraints];
+//    visualFormat = @"V:|-(>=leftButtonMargin)-[leftButton]-(==leftButtonMargin)-|";
+//    constraints = [NSLayoutConstraint constraintsWithVisualFormat:visualFormat
+//                                                          options:0
+//                                                          metrics:metrics
+//                                                            views:views];
+//    [self addConstraints:constraints];
     
     visualFormat = @"V:|-(>=rightButtonMargin)-[rightButton]-(==rightButtonMargin)-|";
     constraints = [NSLayoutConstraint constraintsWithVisualFormat:visualFormat
