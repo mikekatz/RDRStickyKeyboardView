@@ -507,6 +507,19 @@ static NSInteger const RDRInterfaceOrientationUnknown   = -1;
     self.dummyInputView.textView.text = @"";
 }
 
+- (void)setEnabled:(BOOL)enabled
+{
+    _enabled = enabled;
+    self.inputView.textView.editable = enabled;
+    self.inputView.textView.textColor = enabled ? [UIColor darkTextColor] : [UIColor lightGrayColor];
+    self.dummyInputView.textView.editable = enabled;
+    self.dummyInputView.textView.textColor = enabled ? [UIColor darkTextColor] : [UIColor lightGrayColor];
+    self.inputView.leftButton.enabled = enabled;
+    self.dummyInputView.leftButton.enabled = enabled;
+    self.dummyInputView.rightButton.enabled = enabled;
+    self.inputView.rightButton.enabled = enabled;
+}
+
 #pragma mark - Private
 
 - (void)_setupSubviews

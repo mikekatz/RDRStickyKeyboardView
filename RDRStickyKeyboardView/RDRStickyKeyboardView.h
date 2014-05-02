@@ -61,6 +61,7 @@
 @property (nonatomic, strong, readonly) UIScrollView *scrollView;
 @property (nonatomic, strong, readonly) RDRKeyboardInputView *inputView;
 @property (nonatomic, copy) NSString* placeholder;
+@property (nonatomic) BOOL enabled;
 
 // Designated initializer
 - (instancetype)initWithScrollView:(UIScrollView *)scrollView;
